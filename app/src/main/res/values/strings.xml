@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">FinApp</string>
+    <string-array name="credit_descriptions">
+        <item>Salário</item>
+        <item>Outros</item>
+    </string-array>
+    <string-array name="debit_descriptions">
+        <item>Moradia</item>
+        <item>Saúde</item>
+        <item>Outros</item>
+    </string-array>
+</resources>
