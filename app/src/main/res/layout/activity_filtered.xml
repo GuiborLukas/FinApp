@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:isScrollContainer="true"
     tools:context=".activity.FilteredActivity">
 
     <TextView
@@ -62,9 +63,10 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewMoradia"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="135dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
+        android:isScrollContainer="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewTotalMoradia">
@@ -93,9 +95,10 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewSaude"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="135dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
+        android:isScrollContainer="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewTotalSaude" />
@@ -122,9 +125,10 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewOutrosD"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="135dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
+        android:isScrollContainer="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewTotalOutrosD" />
@@ -161,9 +165,10 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewSalario"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="135dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
+        android:isScrollContainer="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewTotalSalario" />
@@ -190,11 +195,10 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewOutrosC"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="135dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="1dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:isScrollContainer="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
