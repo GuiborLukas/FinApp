@@ -27,11 +27,13 @@ public class DashboardActivity extends AppCompatActivity {
     }
 
     public void searchActivity(View view){
-
+        Intent intent = new Intent(getApplicationContext(), SearchActivity.class);
+        startActivity(intent);
     }
 
     public void filteredActivity(View view){
-
+        Intent intent = new Intent(getApplicationContext(), FilteredActivity.class);
+        startActivity(intent);
     }
 
     public void terminateApp(View view){
