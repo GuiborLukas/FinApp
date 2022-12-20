@@ -63,7 +63,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewMoradia"
         android:layout_width="match_parent"
-        android:layout_height="135dp"
+        android:layout_height="110dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:isScrollContainer="true"
@@ -95,7 +95,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewSaude"
         android:layout_width="match_parent"
-        android:layout_height="135dp"
+        android:layout_height="110dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:isScrollContainer="true"
@@ -125,7 +125,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewOutrosD"
         android:layout_width="match_parent"
-        android:layout_height="135dp"
+        android:layout_height="110dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:isScrollContainer="true"
@@ -165,7 +165,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewSalario"
         android:layout_width="match_parent"
-        android:layout_height="135dp"
+        android:layout_height="110dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:isScrollContainer="true"
@@ -195,7 +195,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewOutrosC"
         android:layout_width="match_parent"
-        android:layout_height="135dp"
+        android:layout_height="110dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:isScrollContainer="true"
