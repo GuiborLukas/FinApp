@@ -13,12 +13,14 @@ import com.example.finapp.R;
 import com.example.finapp.model.Operation;
 
 import java.text.DateFormat;
+import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.List;
 
 public class OperationAdapter extends RecyclerView.Adapter<OperationAdapter.MyViewHolder> {
 
     private DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+    DecimalFormat decimalFormat = new DecimalFormat("#.00");
     private List<Operation> list;
 
     public OperationAdapter(List<Operation> list) {
@@ -54,7 +56,7 @@ public class OperationAdapter extends RecyclerView.Adapter<OperationAdapter.MyVi
         holder.textViewOp.setText("Crédito".equalsIgnoreCase(operation.getOperation()) ? "C" : "D");
         holder.textViewDescOp.setText(operation.getDescription());
         holder.textViewDateOp.setText(dateFormat.format(operation.getData()));
-        holder.textViewValueOp.setText("R$" + String.valueOf(operation.getValor()));
+        holder.textViewValueOp.setText("R$ " + String.valueOf(decimalFormat.format(operation.getValor())));
         if("C".equalsIgnoreCase(holder.textViewOp.getText().toString())){
             holder.textViewOp.setTextColor(Color.parseColor("#0000FF"));
             holder.textViewDescOp.setTextColor(Color.parseColor("#0000FF"));

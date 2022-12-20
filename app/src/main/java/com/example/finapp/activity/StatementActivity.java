@@ -17,6 +17,7 @@ import com.example.finapp.helper.OperationDAO;
 import com.example.finapp.model.Operation;
 import com.example.finapp.model.DateOperationComparator;
 
+import java.text.DecimalFormat;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -24,6 +25,7 @@ import java.util.List;
 
 public class StatementActivity extends AppCompatActivity {
 
+    DecimalFormat decimalFormat = new DecimalFormat("#.##");
     private RecyclerView recyclerView;
     private OperationAdapter operationAdapter;
     private List<Operation> operationList = new ArrayList<>();
@@ -46,19 +48,22 @@ public class StatementActivity extends AppCompatActivity {
         } catch (ParseException e) {
             e.printStackTrace();
         }
-        textViewValueSaldo.setText(String.valueOf(calculaTotal(operationList)));
-            if(Double.parseDouble(textViewValueSaldo.getText().toString()) >= 0 ){
-                textViewValueSaldo.setTextColor(Color.parseColor("#0000FF"));
-            }else{
-                textViewValueSaldo.setTextColor(Color.parseColor("#FF0000"));
-            }
+        double saldo = calculaTotal(operationList);
+        if(saldo >= 0 ){
+            textViewValueSaldo.setTextColor(Color.parseColor("#0000FF"));
+        }else{
+            textViewValueSaldo.setTextColor(Color.parseColor("#FF0000"));
+        }
+        textViewValueSaldo.setText("R$ " + String.valueOf(decimalFormat.format(saldo)));
     }
 
     public void updateRecyclerOperation() throws ParseException {
         OperationDAO operationDAO = new OperationDAO(getApplicationContext());
         operationList = operationDAO.getAllOperations();
         Collections.sort(operationList, new DateOperationComparator());
-        operationAdapter = new OperationAdapter(operationList);
+        Collections.reverse(operationList);
+        List<Operation> lastOperationList = operationList.subList(0, operationList.size()>15 ? 14 : operationList.size());
+        operationAdapter = new OperationAdapter(lastOperationList);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setHasFixedSize(true);
