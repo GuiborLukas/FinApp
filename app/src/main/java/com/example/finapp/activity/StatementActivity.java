@@ -25,7 +25,7 @@ import java.util.List;
 
 public class StatementActivity extends AppCompatActivity {
 
-    DecimalFormat decimalFormat = new DecimalFormat("#.##");
+    private DecimalFormat decimalFormat = new DecimalFormat("#.##");
     private RecyclerView recyclerView;
     private OperationAdapter operationAdapter;
     private List<Operation> operationList = new ArrayList<>();
