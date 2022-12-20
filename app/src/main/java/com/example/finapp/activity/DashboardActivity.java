@@ -22,7 +22,8 @@ public class DashboardActivity extends AppCompatActivity {
     }
 
     public void statementActivity(View view){
-
+        Intent intent = new Intent(getApplicationContext(), StatementActivity.class);
+        startActivity(intent);
     }
 
     public void searchActivity(View view){

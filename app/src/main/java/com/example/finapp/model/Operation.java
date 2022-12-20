@@ -1,6 +1,10 @@
 package com.example.finapp.model;
 
 import java.io.Serializable;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 
 public class Operation implements Serializable {
@@ -64,7 +68,6 @@ public class Operation implements Serializable {
         return data;
     }
 
-    public void setData(Date data) {
-        this.data = data;
-    }
+    public void setData(Date data) { this.data = data; }
+
 }
