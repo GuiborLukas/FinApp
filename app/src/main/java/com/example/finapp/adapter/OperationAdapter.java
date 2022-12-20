@@ -1,5 +1,6 @@
 package com.example.finapp.adapter;
 
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -50,14 +51,25 @@ public class OperationAdapter extends RecyclerView.Adapter<OperationAdapter.MyVi
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         Operation operation = list.get(position);
-        holder.textViewOp.setText(operation.getOperation() == "Crédito" ? "C" : "D");
+        holder.textViewOp.setText("Crédito".equalsIgnoreCase(operation.getOperation()) ? "C" : "D");
         holder.textViewDescOp.setText(operation.getDescription());
         holder.textViewDateOp.setText(dateFormat.format(operation.getData()));
         holder.textViewValueOp.setText("R$" + String.valueOf(operation.getValor()));
+        if("C".equalsIgnoreCase(holder.textViewOp.getText().toString())){
+            holder.textViewOp.setTextColor(Color.parseColor("#0000FF"));
+            holder.textViewDescOp.setTextColor(Color.parseColor("#0000FF"));
+            holder.textViewDateOp.setTextColor(Color.parseColor("#0000FF"));
+            holder.textViewValueOp.setTextColor(Color.parseColor("#0000FF"));
+        }else{
+            holder.textViewOp.setTextColor(Color.parseColor("#FF0000"));
+            holder.textViewDescOp.setTextColor(Color.parseColor("#FF0000"));
+            holder.textViewDateOp.setTextColor(Color.parseColor("#FF0000"));
+            holder.textViewValueOp.setTextColor(Color.parseColor("#FF0000"));
+        }
     }
 
     @Override
     public int getItemCount() {
-        return 15;
+        return this.list.size();
     }
 }

@@ -37,9 +37,9 @@ public class OperationDAO {
 
         try{
             write.insert(DBHelper.TABLE1_NAME, null, values);
-            Log.i("INFO", "Tarefa salva com sucesso!");
+            Log.i("INFO", "Operação salva com sucesso!");
         }catch (Exception e) {
-            Log.e("INFO DB", "Erro ao salvar tarefa: " + e.getMessage());
+            Log.e("INFO DB", "Erro ao salvar operação: " + e.getMessage());
             return false;
         }
         return true;
@@ -54,9 +54,9 @@ public class OperationDAO {
         try{
             String[] args = {operation.getId().toString()};
             write.update(DBHelper.TABLE1_NAME, values, "id=?", args);
-            Log.i("INFO", "Tarefa atualizada com sucesso!");
+            Log.i("INFO", "Operação atualizada com sucesso!");
         }catch (Exception e) {
-            Log.e("INFO DB", "Erro ao atualizar tarefa: " + e.getMessage());
+            Log.e("INFO DB", "Erro ao atualizar operação: " + e.getMessage());
             return false;
         }
         return true;
@@ -66,9 +66,9 @@ public class OperationDAO {
         try{
             String[] args = {operation.getId().toString()};
             write.delete(DBHelper.TABLE1_NAME, "id=?", args);
-            Log.i("INFO", "Tarefa removida com sucesso!");
+            Log.i("INFO", "Operação removida com sucesso!");
         }catch (Exception e) {
-            Log.e("INFO DB", "Erro ao remover tarefa: " + e.getMessage());
+            Log.e("INFO DB", "Erro ao remover operação: " + e.getMessage());
             return false;
         }
         return true;

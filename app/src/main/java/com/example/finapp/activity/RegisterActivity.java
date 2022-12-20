@@ -128,40 +128,40 @@ public class RegisterActivity extends AppCompatActivity {
         if(item.getItemId() == R.id.itemSalvar){
             OperationDAO operationDAO = new OperationDAO(getApplicationContext());
             if(currentOperation != null) {
-                String strNewValue = editTextValue.getText().toString();
-                String strNewDate = editTextDate.getText().toString();
-                RadioButton rb = (RadioButton) findViewById(
-                        radioGroupOperation.getCheckedRadioButtonId());
-                String strNewOperation = rb.getText().toString();
-                String strNewDescription = spinnerDescription.getSelectedItem().toString();
-
-                if (strNewValue.isEmpty()
-                        || strNewDate.isEmpty()
-                        || strNewOperation.isEmpty()
-                        || strNewDescription.isEmpty()
-                ){
-                    Toast.makeText(this, "Insira a tarefa", Toast.LENGTH_SHORT).show();
-                }
-                else {
-                    try {
-                        Operation operation = new Operation();
-                        operation.setId(currentOperation.getId());
-                        operation.setValor(Double.parseDouble(strNewValue));
-                        operation.setOperation(strNewOperation);
-                        operation.setDescription(strNewDescription);
-                        operation.setData(operationDAO.strToDate(strNewDate));
-                        if (operationDAO.updateOperation(operation)) {
-                            finish();
-                            Toast.makeText(this, "Operação salva", Toast.LENGTH_SHORT).show();
-                        } else {
-                            Toast.makeText(this, "Erro ao salvar operação", Toast.LENGTH_SHORT).show();
-                        }
-                    }catch(NumberFormatException e){
-                        Toast.makeText(this, "Valor deve ser numérico!", Toast.LENGTH_SHORT).show();
-                    } catch (ParseException e) {
-                        e.printStackTrace();
-                    }
-                }
+//                String strNewValue = editTextValue.getText().toString();
+//                String strNewDate = editTextDate.getText().toString();
+//                RadioButton rb = (RadioButton) findViewById(
+//                        radioGroupOperation.getCheckedRadioButtonId());
+//                String strNewOperation = rb.getText().toString();
+//                String strNewDescription = spinnerDescription.getSelectedItem().toString();
+//
+//                if (strNewValue.isEmpty()
+//                        || strNewDate.isEmpty()
+//                        || strNewOperation.isEmpty()
+//                        || strNewDescription.isEmpty()
+//                ){
+//                    Toast.makeText(this, "Insira a tarefa", Toast.LENGTH_SHORT).show();
+//                }
+//                else {
+//                    try {
+//                        Operation operation = new Operation();
+//                        operation.setId(currentOperation.getId());
+//                        operation.setValor(Double.parseDouble(strNewValue));
+//                        operation.setOperation(strNewOperation);
+//                        operation.setDescription(strNewDescription);
+//                        operation.setData(operationDAO.strToDate(strNewDate));
+//                        if (operationDAO.updateOperation(operation)) {
+//                            finish();
+//                            Toast.makeText(this, "Operação salva", Toast.LENGTH_SHORT).show();
+//                        } else {
+//                            Toast.makeText(this, "Erro ao salvar operação", Toast.LENGTH_SHORT).show();
+//                        }
+//                    }catch(NumberFormatException e){
+//                        Toast.makeText(this, "Valor deve ser numérico!", Toast.LENGTH_SHORT).show();
+//                    } catch (ParseException e) {
+//                        e.printStackTrace();
+//                    }
+//                }
 
 
             }else{
@@ -177,7 +177,7 @@ public class RegisterActivity extends AppCompatActivity {
                     || strNewOperation.isEmpty()
                     || strNewDescription.isEmpty()
                 ){
-                    Toast.makeText(this, "Insira a tarefa", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "Preencha todos os campos!", Toast.LENGTH_SHORT).show();
                 }
                 else {
                     try {

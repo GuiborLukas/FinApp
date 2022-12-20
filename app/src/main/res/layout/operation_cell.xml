@@ -4,47 +4,41 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/linearLayout2"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:layout_height="wrap_content"
     android:padding="5dp">
 
-    <LinearLayout
+    <TextView
+        android:id="@+id/textViewOp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="5dp"
+        android:padding="5dp"
+        android:textAlignment="center"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/textViewDescOp"
+        android:layout_width="80dp"
+        android:layout_height="30dp"
+        android:padding="5dp"
+        android:textAlignment="textStart"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/textViewDateOp"
+        android:layout_width="120dp"
+        android:layout_height="30dp"
+        android:padding="5dp"
+        android:textAlignment="center"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/textViewValueOp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_height="30dp"
+        android:layout_marginEnd="5dp"
+        android:padding="5dp"
+        android:textAlignment="textEnd"
+        android:textSize="18sp" />
 
-        <TextView
-            android:id="@+id/textViewOp"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginStart="5dp"
-            android:padding="5dp"
-            android:textAlignment="center"
-            android:textSize="18sp" />
-
-        <TextView
-            android:id="@+id/textViewDescOp"
-            android:layout_width="80dp"
-            android:layout_height="30dp"
-            android:padding="5dp"
-            android:textAlignment="textStart"
-            android:textSize="18sp" />
-
-        <TextView
-            android:id="@+id/textViewDateOp"
-            android:layout_width="120dp"
-            android:layout_height="30dp"
-            android:padding="5dp"
-            android:textAlignment="center"
-            android:textSize="18sp" />
-
-        <TextView
-            android:id="@+id/textViewValueOp"
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:layout_marginEnd="5dp"
-            android:padding="5dp"
-            android:textAlignment="textEnd"
-            android:textSize="18sp" />
-    </LinearLayout>
 </LinearLayout>
