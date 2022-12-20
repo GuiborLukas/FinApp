@@ -16,7 +16,6 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.finapp.R;
-import com.example.finapp.helper.DBHelper;
 import com.example.finapp.helper.OperationDAO;
 import com.example.finapp.model.Operation;
 
@@ -40,11 +39,11 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        radioGroupOperation = (RadioGroup) findViewById(R.id.radioGroupOperation);
-        checkedRadioButton = (RadioButton)radioGroupOperation.findViewById(radioGroupOperation.getCheckedRadioButtonId());
-        spinnerDescription = (Spinner) findViewById(R.id.spinnerDescription);
-        editTextValue = (EditText) findViewById(R.id.editTextValue);
-        editTextDate = (EditText) findViewById(R.id.editTextDate);
+        radioGroupOperation = findViewById(R.id.radioGroupOperation);
+        checkedRadioButton = radioGroupOperation.findViewById(radioGroupOperation.getCheckedRadioButtonId());
+        spinnerDescription = findViewById(R.id.spinnerDescription);
+        editTextValue = findViewById(R.id.editTextValue);
+        editTextDate = findViewById(R.id.editTextDate);
 
     radioGroupOperation.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
         public void onCheckedChanged(RadioGroup arg0, int id) {
@@ -125,43 +124,43 @@ public class RegisterActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item){
-        if(item.getItemId() == R.id.itemSalvar){
+        if(item.getItemId() == R.id.itemAction){
             OperationDAO operationDAO = new OperationDAO(getApplicationContext());
             if(currentOperation != null) {
-//                String strNewValue = editTextValue.getText().toString();
-//                String strNewDate = editTextDate.getText().toString();
-//                RadioButton rb = (RadioButton) findViewById(
-//                        radioGroupOperation.getCheckedRadioButtonId());
-//                String strNewOperation = rb.getText().toString();
-//                String strNewDescription = spinnerDescription.getSelectedItem().toString();
-//
-//                if (strNewValue.isEmpty()
-//                        || strNewDate.isEmpty()
-//                        || strNewOperation.isEmpty()
-//                        || strNewDescription.isEmpty()
-//                ){
-//                    Toast.makeText(this, "Insira a tarefa", Toast.LENGTH_SHORT).show();
-//                }
-//                else {
-//                    try {
-//                        Operation operation = new Operation();
-//                        operation.setId(currentOperation.getId());
-//                        operation.setValor(Double.parseDouble(strNewValue));
-//                        operation.setOperation(strNewOperation);
-//                        operation.setDescription(strNewDescription);
-//                        operation.setData(operationDAO.strToDate(strNewDate));
-//                        if (operationDAO.updateOperation(operation)) {
-//                            finish();
-//                            Toast.makeText(this, "Operação salva", Toast.LENGTH_SHORT).show();
-//                        } else {
-//                            Toast.makeText(this, "Erro ao salvar operação", Toast.LENGTH_SHORT).show();
-//                        }
-//                    }catch(NumberFormatException e){
-//                        Toast.makeText(this, "Valor deve ser numérico!", Toast.LENGTH_SHORT).show();
-//                    } catch (ParseException e) {
-//                        e.printStackTrace();
-//                    }
-//                }
+                String strNewValue = editTextValue.getText().toString();
+                String strNewDate = editTextDate.getText().toString();
+                RadioButton rb = (RadioButton) findViewById(
+                        radioGroupOperation.getCheckedRadioButtonId());
+                String strNewOperation = rb.getText().toString();
+                String strNewDescription = spinnerDescription.getSelectedItem().toString();
+
+                if (strNewValue.isEmpty()
+                        || strNewDate.isEmpty()
+                        || strNewOperation.isEmpty()
+                        || strNewDescription.isEmpty()
+                ){
+                    Toast.makeText(this, "Preencha todos os campos!", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    try {
+                        Operation operation = new Operation();
+                        operation.setId(currentOperation.getId());
+                        operation.setValor(Double.parseDouble(strNewValue));
+                        operation.setOperation(strNewOperation);
+                        operation.setDescription(strNewDescription);
+                        operation.setData(operationDAO.strToDate(strNewDate));
+                        if (operationDAO.updateOperation(operation)) {
+                            finish();
+                            Toast.makeText(this, "Operação salva", Toast.LENGTH_SHORT).show();
+                        } else {
+                            Toast.makeText(this, "Erro ao salvar operação", Toast.LENGTH_SHORT).show();
+                        }
+                    }catch(NumberFormatException e){
+                        Toast.makeText(this, "Valor deve ser numérico!", Toast.LENGTH_SHORT).show();
+                    } catch (ParseException e) {
+                        e.printStackTrace();
+                    }
+                }
 
 
             }else{
